@@ -1,0 +1,10 @@
+.exo1 {
+    border: blueviolet 1px solid;
+    background-color: greenyellow;
+}
+
+.exo1 > h1 {
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: black 5px 5px;
+}

@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
+import style from './welcome.module.css';
 
 const Welcome = function (props) {
 
     const {firstname, lastname} = props;
 
     return (
-        <p>Bonjour {firstname} {lastname}</p>
+        <p>Bonjour 
+            <span className={style.name}> {firstname} {lastname}</span>
+        </p>
     );
 }
 

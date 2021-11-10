@@ -6,3 +6,6 @@ Créer un nouveau projet ReactJS :
 Lancer un projet React :
     - se placer dna sle fichier via CD etc. dans l'invite de commande
     - taper npm start dans l'invite de commande
+    
+Installer prop type :
+    -dans la console taper npm intall prop-types
