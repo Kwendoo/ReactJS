@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const Welcome = function (props) {
 
@@ -10,6 +11,11 @@ const Welcome = function (props) {
 
 Welcome.defaultProps = {
     lastname : 'Primogallo'
+}
+
+Welcome.propTypes = {
+    firstname : PropTypes.string.isRequired,
+    lastname : PropTypes.string
 }
 
 export default Welcome;
