@@ -1,7 +1,7 @@
 Créer un nouveau projet ReactJS :
     - se placer dans le bon dossier
     - ouvrir un invit de commande 
-    - taper : npm react-app nomDuProjet
+    - taper : npm init react-app nomDuProjet
     
 Lancer un projet React :
     - se placer dna sle fichier via CD etc. dans l'invite de commande
