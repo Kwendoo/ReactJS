@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import BasiqueForm from './componenets/basique-form/basique-form';
+import ComplexeFormV1 from './componenets/compexe-form/complexe-form-v1';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Demo formulaire</h1>
+      <h2> Formulaire basique</h2>
+      <BasiqueForm />
+
+      <h2> Formulaire complexe</h2>
+      <ComplexeFormV1 />
     </div>
   );
 }
