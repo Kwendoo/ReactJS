@@ -8,4 +8,7 @@ Lancer un projet React :
     - taper npm start dans l'invite de commande
     
 Installer prop type :
-    -dans la console taper npm intall prop-types
+    - dans la console taper npm intall prop-types
+    
+Installer nanoid :
+    - dans la console taper npm install nanoid

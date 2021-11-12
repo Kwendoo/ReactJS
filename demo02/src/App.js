@@ -1,18 +1,37 @@
 import './App.css';
-import PoepleList from './components/poepleList/poepleList';
+import PeopleList from './components/people-list';
+import PeopleListV2 from './components/people-list-v2';
+import { nanoid } from 'nanoid'
+import ProductTable from './exercice/exo2/product-table';
+
 function App() {
+
   const people = [
-    {id : 1, firstname: 'Zaza', lastname: 'Vanderquack'},
-    {id : 2, firstname: 'Riri', lastname: 'Duck'},
-    {id : 3, firstname: 'Balthazar', lastname: 'Picsou'},
-    {id : 4, firstname: 'Donald', lastname: 'Duck'},
-    {id : 5, firstname: 'Gontran', lastname: 'Bonheur'},
-    {id : 6, firstname: 'Della', lastname: 'Duck'}
+    {id: nanoid(),firstname: 'Zaza', lastname: 'Vanderquack'},
+    {id: nanoid(),firstname: 'Riri', lastname: 'Duck'},
+    {id: nanoid(),firstname: 'Balthazar', lastname: 'Picsou'},
+    {id: nanoid(),firstname: 'Donald', lastname: 'Duck'},
+    {id: nanoid(),firstname: 'Gontran', lastname: 'Bonheur'},
+    {id: nanoid(),firstname: 'Della', lastname: 'Duck'}
   ]
+
+  const products = [
+    {id: nanoid(), name: 'Chocolat', price: 2},
+    {id: nanoid(), name: 'Pasta', price: 3, promo: true},
+    {id: nanoid(), name: 'Biscuits', price: 5},
+    {id: nanoid(), name: 'Mandarine', price: 2},
+    {id: nanoid(), name: 'Gateau', price: 7, promo: true},
+  ]
+
   return (
     <div className="App">
       <h1>Liste de personne</h1>
-      <PoepleList data={people}/>
+      <PeopleList data={people} />
+
+      <PeopleListV2 data={people} />
+
+      <h1>Liste de produits:</h1>
+      <ProductTable data={products} />
     </div>
   );
 }
