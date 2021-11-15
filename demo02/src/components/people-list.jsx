@@ -11,7 +11,7 @@ const PeopleList = (props) => {
             {peopleJSX}
         </ul>
     );
-}
+} 
 
 PeopleList.defaultProps ={
     data: []

@@ -32,7 +32,7 @@ function App() {
 
       <h1>Liste de produits:</h1>
       <ProductTable data={products} />
-    </div>
+    </div> 
   );
 }
 export default App;

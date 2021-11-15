@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Todo from './component/container/todo';
 
 function App() {
+
+
+
   return (
     <div className="App">
-      
+
+      <Todo />
+
     </div>
   );
 }

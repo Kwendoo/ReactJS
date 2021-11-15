@@ -3,7 +3,7 @@ import DisplayPrice from '../display-price/display-price';
 
 const ProductTableItem = (props) => {
     const {name, price, promo} = props;
-
+ 
     return (
         <tr>
             <td>{name}</td>
