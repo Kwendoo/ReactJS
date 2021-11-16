@@ -1,23 +1,29 @@
-import { useState } from "react";
-import SearchBar from "../../components/search-bar/search-bar";
+import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import WeatherDisplay from "../../components/weather-display/weather-display";
+import WeatherDisplay from '../../weather-display/weather-display';
+
 
 const URL_WEATHER = 'https://api.openweathermap.org/data/2.5'
 
-// 
+const WeatherRequest = (props) => {
 
-const WeatherApp = () => {
+    const city = props.city?.trim() ?? '';
 
-    const [weather, setWeather] = useState(null);
-    const [error, setError] = useState(null);
     const [isLoading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [weatherData, setWeatherData] = useState(null);
 
-    const handleSearch = (city) => {
+    useEffect(() => {
+        setError(null);
+        setWeatherData(null);
+
+        if(city === '') {
+            setLoading(false);
+            return;
+        }
 
         setLoading(true);
-        setWeather(null);
-        setError(null)
 
         axios.get(URL_WEATHER + '/weather', {
             params : {
@@ -28,7 +34,7 @@ const WeatherApp = () => {
             }
         }).then(({data}) => {
 
-            setWeather({
+            setWeatherData({
                 city : data.name,
                 country : data.sys.country,
                 temp : data.main.temp,
@@ -47,29 +53,26 @@ const WeatherApp = () => {
 
         });
 
-    }
+    }, [city]);
 
     return (
         <div>
-            <h3>Recherche la météo</h3>
-            
-            <SearchBar placeholder = 'Namur' label = 'Entrez votre ville'
-                       onSearch={handleSearch}/>
-            
-            <h3>Résultat de la recherche</h3>
-            
             {isLoading ? (
-                <p>Chargement ...</p>
+                <p>Chargement...</p>
             ) : error ? (
                 <p>{error}</p>
-            ) : weather ? (
-                <WeatherDisplay {...weather}/>
+            ) : weatherData ? (
+                <WeatherDisplay />
             ) : (
-                <p>Aucunes données</p>
+                <p>Aucune données</p>
             )}
         </div>
     );
 
 };
 
-export default WeatherApp;
+WeatherRequest.propTypes = {
+    city : PropTypes.string.isRequired
+}
+
+export default WeatherRequest;
