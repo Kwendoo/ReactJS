@@ -1,5 +1,5 @@
 {
-  "name": "exo-meteo",
+  "name": "exo-meteo-dedicated",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
